@@ -213,7 +213,7 @@ textarea:focus {
 
 /* ── Screen 3: Speak ── */
 
-#s-speak .si { justify-content: space-between; }
+#s-speak .si { gap: 20px; }
 
 .speak-hint { text-align: center; }
 
@@ -234,13 +234,27 @@ textarea:focus {
   margin: 0 auto;
 }
 
+.written-text-display {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(240,240,240,.65);
+  max-height: 130px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  -webkit-overflow-scrolling: touch;
+}
+
 .pulse-stage {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 32px;
-  padding: 16px 0;
 }
 
 .pulse-orbit {

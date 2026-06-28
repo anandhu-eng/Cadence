@@ -225,6 +225,7 @@ document.getElementById('back-write').addEventListener('click', () => goTo('topi
 
 document.getElementById('btn-speak').addEventListener('click', () => {
   document.getElementById('speak-topic').textContent = topic;
+  document.getElementById('written-text').textContent = document.getElementById('ta').value.trim();
   goTo('speak');
   applyPulse(PULSE_REST, true);
   startMetronome();
