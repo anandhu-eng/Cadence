@@ -158,13 +158,24 @@ body {
 
 .topic-actions { margin-top: 20px; }
 
-/* Topic state row — inside the card */
-.topic-state-row {
+/* Summary state row — on Screen 4, below the motivational card */
+.summary-state-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.summary-state-label {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.summary-state-btns {
   display: flex;
   gap: 8px;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
 }
 
 .state-btn {

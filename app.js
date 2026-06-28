@@ -285,7 +285,6 @@ function loadTopic(excludeCurrent) {
   topicIndex = pick(pool);
   topic = TOPICS[topicIndex];
   document.getElementById('topic-text').textContent = topic;
-  updateStateButtons();
   hidePoolEmpty();
 }
 
@@ -298,6 +297,18 @@ document.getElementById('btn-ready').addEventListener('click', () => {
   syncWordCount();
   goTo('write');
   setTimeout(() => document.getElementById('ta').focus(), 230);
+});
+
+document.getElementById('btn-speak-direct').addEventListener('click', () => {
+  document.getElementById('speak-topic').textContent = topic;
+  const writtenEl = document.getElementById('written-text');
+  writtenEl.textContent = '';
+  writtenEl.style.display = 'none';
+  words = 0;
+  goTo('speak');
+  applyPulse(PULSE_REST, true);
+  startMetronome();
+  startTimer();
 });
 
 document.getElementById('btn-revisit').addEventListener('click', () => {
@@ -333,7 +344,10 @@ document.getElementById('back-write').addEventListener('click', () => goTo('topi
 
 document.getElementById('btn-speak').addEventListener('click', () => {
   document.getElementById('speak-topic').textContent = topic;
-  document.getElementById('written-text').textContent = document.getElementById('ta').value.trim();
+  const written = document.getElementById('ta').value.trim();
+  const writtenEl = document.getElementById('written-text');
+  writtenEl.textContent = written;
+  writtenEl.style.display = written ? '' : 'none';
   goTo('speak');
   applyPulse(PULSE_REST, true);
   startMetronome();
@@ -348,6 +362,7 @@ document.getElementById('btn-done').addEventListener('click', () => {
   document.getElementById('s-time').textContent  = formatTime(elapsed);
   document.getElementById('s-words').textContent = words;
   document.getElementById('motiv').textContent   = pick(QUOTES);
+  updateStateButtons();
   goTo('summary');
 });
 
@@ -360,7 +375,9 @@ document.getElementById('btn-new').addEventListener('click', () => {
 
 document.getElementById('btn-same').addEventListener('click', () => {
   document.getElementById('speak-topic').textContent = topic;
-  document.getElementById('written-text').textContent = document.getElementById('ta').value.trim();
+  // Keep written text visible if it exists from the write screen; hide otherwise
+  const writtenEl = document.getElementById('written-text');
+  if (!writtenEl.textContent) writtenEl.style.display = 'none';
   goTo('speak');
   applyPulse(PULSE_REST, true);
   startMetronome();

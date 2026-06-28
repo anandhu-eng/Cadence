@@ -18,10 +18,6 @@
       <div class="prompt-label">Your prompt for this round</div>
       <div class="card" id="topic-card">
         <div class="topic-text" id="topic-text"></div>
-        <div class="topic-state-row">
-          <button class="state-btn" id="btn-revisit">★&nbsp; Revisit</button>
-          <button class="state-btn" id="btn-done-topic">✓&nbsp; Done</button>
-        </div>
       </div>
       <div class="pool-empty" id="pool-empty">
         <p class="pool-empty-text">You've reflected on everything.</p>
@@ -30,6 +26,7 @@
       <div class="topic-actions">
         <button class="btn btn-ghost" id="btn-shuffle">↺&nbsp;&nbsp;Shuffle</button>
         <button class="btn btn-cta" id="btn-ready">I'm ready to write →</button>
+        <button class="btn btn-ghost" id="btn-speak-direct">Speak directly →</button>
       </div>
     </div>
   </div>
@@ -91,6 +88,13 @@
       </div>
       <div class="motiv-card">
         <div class="motiv-text" id="motiv"></div>
+      </div>
+      <div class="summary-state-row">
+        <span class="summary-state-label">Mark this topic</span>
+        <div class="summary-state-btns">
+          <button class="state-btn" id="btn-revisit">★&nbsp; Revisit</button>
+          <button class="state-btn" id="btn-done-topic">✓&nbsp; Done</button>
+        </div>
       </div>
       <button class="btn btn-cta" id="btn-new">New Round</button>
       <button class="btn btn-ghost" id="btn-same">Same Topic Again</button>
