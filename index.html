@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cadence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SCREEN 1: TOPIC -->
+  <div class="screen active" id="s-topic">
+    <div class="si">
+      <div class="topic-head">
+        <div class="wordmark">Cadence<span class="dot">.</span></div>
+        <div class="tagline">Daily speech practice</div>
+      </div>
+      <div class="prompt-label">Your prompt for this round</div>
+      <div class="card">
+        <div class="topic-text" id="topic-text"></div>
+      </div>
+      <div class="topic-actions">
+        <button class="btn btn-ghost" id="btn-shuffle">↺&nbsp;&nbsp;Shuffle</button>
+        <button class="btn btn-cta" id="btn-ready">I'm ready to write →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: WRITE -->
+  <div class="screen" id="s-write">
+    <div class="si">
+      <button class="back" id="back-write">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 2.5L4.5 7.5L9.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+      </button>
+      <div class="write-label">Speaking about</div>
+      <div class="write-topic-echo" id="write-topic"></div>
+      <textarea id="ta" placeholder="Write your thoughts here. Don't worry about perfection." rows="8"></textarea>
+      <div class="wc" id="wc">0 words</div>
+      <button class="btn btn-cta" id="btn-speak" disabled>Start Speaking →</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: SPEAK -->
+  <div class="screen" id="s-speak">
+    <div class="si">
+      <div class="speak-hint">
+        <div class="speak-hint-lbl">Topic</div>
+        <div class="speak-hint-txt" id="speak-topic"></div>
+      </div>
+      <div class="pulse-stage">
+        <div class="pulse-orbit">
+          <div id="pulse"></div>
+        </div>
+        <div class="timer-block">
+          <span class="timer" id="timer">00:00</span>
+          <div class="bpm-label">85 BPM — find your rhythm</div>
+        </div>
+      </div>
+      <button class="btn btn-cta" id="btn-done">Done</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: SUMMARY -->
+  <div class="screen" id="s-summary">
+    <div class="si">
+      <div class="summary-head">
+        <div class="wordmark">Cadence<span class="dot">.</span></div>
+      </div>
+      <div class="round-badge">Round complete</div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-val" id="s-time">00:00</span>
+          <span class="stat-lbl">Time spoken</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val" id="s-words">0</span>
+          <span class="stat-lbl">Words written</span>
+        </div>
+      </div>
+      <div class="motiv-card">
+        <div class="motiv-text" id="motiv"></div>
+      </div>
+      <button class="btn btn-cta" id="btn-new">New Round</button>
+      <button class="btn btn-ghost" id="btn-same">Same Topic Again</button>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
