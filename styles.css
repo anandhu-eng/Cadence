@@ -156,7 +156,57 @@ body {
   align-items: center;
 }
 
-.topic-actions { margin-top: 28px; }
+.topic-actions { margin-top: 20px; }
+
+/* Topic state row — inside the card */
+.topic-state-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.state-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  letter-spacing: .02em;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 150ms, border-color 150ms, color 150ms;
+}
+
+.state-btn:hover { border-color: #374151; color: var(--text); }
+
+.state-btn.active {
+  background: rgba(245,166,35,.1);
+  border-color: rgba(245,166,35,.45);
+  color: var(--accent);
+}
+
+/* Pool-empty message — shown in place of the card */
+.pool-empty {
+  display: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px 24px 28px;
+  text-align: center;
+}
+
+.pool-empty-text {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--text);
+  margin-bottom: 20px;
+}
 
 /* ── Screen 2: Write ── */
 

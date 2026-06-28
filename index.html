@@ -16,8 +16,16 @@
         <div class="tagline">Daily speech practice</div>
       </div>
       <div class="prompt-label">Your prompt for this round</div>
-      <div class="card">
+      <div class="card" id="topic-card">
         <div class="topic-text" id="topic-text"></div>
+        <div class="topic-state-row">
+          <button class="state-btn" id="btn-revisit">★&nbsp; Revisit</button>
+          <button class="state-btn" id="btn-done-topic">✓&nbsp; Done</button>
+        </div>
+      </div>
+      <div class="pool-empty" id="pool-empty">
+        <p class="pool-empty-text">You've reflected on everything.</p>
+        <button class="btn btn-ghost" id="btn-reset-pool">Reset completed topics</button>
       </div>
       <div class="topic-actions">
         <button class="btn btn-ghost" id="btn-shuffle">↺&nbsp;&nbsp;Shuffle</button>
